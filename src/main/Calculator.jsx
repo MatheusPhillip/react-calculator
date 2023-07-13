@@ -2,14 +2,15 @@ import React, {Component} from "react";
 import './Calculator.css';
 import Button from "../components/Button";
 import Display from "../components/Display";
-import { clear } from "@testing-library/user-event/dist/clear";
+import DisplayHistory from "../components/DisplayHistory";
 
 const initialState = {
     displayValue: '0',
     clearDisplay: false,
     operation: null,
     values: [0, 0],
-    currentIndexValue: 0
+    currentIndexValue: 0,
+    history: [25, " + ", 50, " - ", 70]
 }
 
 
@@ -98,6 +99,7 @@ export default class Calculator extends Component {
     render(){
         return (
             <div className="calculator">
+                <DisplayHistory value={this.state.history}></DisplayHistory>
                 <Display value={this.state.displayValue}></Display>
                 <Button label="AC" click={this.clearMemory} triple/>
                 <Button label='/' click={this.setOperation} operation/>

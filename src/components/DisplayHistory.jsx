@@ -4,5 +4,4 @@ import './Display.css'
 
 export default props =>
     
-    <div className="display">{props.value}</div>
-    
+    <div className="display-history">{props.value}</div>
